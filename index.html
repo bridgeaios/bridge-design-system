@@ -607,7 +607,7 @@ footer{border-top:1px solid var(--line);background:#050508;padding:6rem 6vw 2rem
 <script>
 (function(){
 'use strict';
-gsap.registerPlugin(ScrollTrigger);
+try{ gsap.registerPlugin(ScrollTrigger); }catch(e){ console.warn('GSAP unavailable', e); }
 const $  = s => document.querySelector(s);
 const $$ = s => Array.from(document.querySelectorAll(s));
 const reduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
