@@ -693,7 +693,7 @@ try{
     uMouse:{value:new THREE.Vector2()}, uScroll:{value:0}, uVel:{value:0}
   };
   const mat = new THREE.ShaderMaterial({uniforms:heroU, vertexShader:'void main(){gl_Position=vec4(position,1.0);}', fragmentShader:FRAG});
-  heroScene.add(new THREE.Mesh(new THREE.PlaneBufferGeometry(2,2), mat));
+  heroScene.add(new THREE.Mesh(new THREE.PlaneGeometry(2,2), mat));
   const sizeHero = ()=>{ heroRenderer.setSize(canvas.clientWidth, canvas.clientHeight, false); heroRenderer.getDrawingBufferSize(heroU.uRes.value); };
   sizeHero();
   window.addEventListener('resize', sizeHero);
